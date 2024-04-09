@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form" onsubmit="sendEmail(); reset(); return false;">
+            <div class="reganime"></div>
+            <h1>REGISTER</h1>
+            <input type="name" placeholder="Full Name" id="email">
+            <input type="email" placeholder="Your Email Address" id="email">
+            <input type="date" id="dob">
+            <input type="password" name="locked" required placeholder="Password">
+            <button type="submit" class="btn" onclick="sendEmail()">Submit</button>
+            <p>Already have an account? <span><a href="index.html">Login</a></span></p>
+        </div>
+
+        <div class="popup" id="popup">
+            <h1>Thank You For Registering</h1>
+
+            <button class="close" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+                    Email.send({
+            Host : "smtp.gmail.com",
+            Username : "beeblings108@gmail.com",
+            Password : "Samuel2006?",
+            To : 'salamisamuel2006@gmail.com',
+            From : document.getElementById("email").value,
+            Subject : "My Contatct Form Enquiry",
+            Body : "And this is the body"
+        }).then(
+        message => alert(message)
+        );
+        }
+        // let popup = document.getElementById("popup")
+
+        // function openPopup() {
+        //     popup.classList.add("open-popup")
+        // }
+        // function closePopup() {
+        //     popup.classList.remove("open-popup")
+        // }
+
+        // console.log(popup)
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- <form class="form" onsubmit="sendEmail(); reset(); return false;"> -->
+        <form action="https://formsubmit.co/1f3bf5333607f2ace1b0fb6d7de29fd5 " method="POST" class="form">
+            <div class="anime"></div>
+            <h1>LOGIN</h1>
+            <input type="email" name="email" placeholder="Your Email Address" id="email">
+            <input type="password" name="password" required placeholder="Password">
+            <p class="remember"><input type="checkbox"> Remember Me | <span><a href="#">Forgotten Password</a></span></p>
+            <button type="submit" class="btn">Submit</button>
+            <p>Dont have an account? <span><a href="Register.html">Register</a></span></p>
+        </form>
+
+        <div class="popup" id="popup">
+            <h1>Thank You For Registering</h1>
+
+            <button class="close" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail() {
+                    Email.send({
+                        Host : "smtp.elasticemail.com",
+                        Username : "beeblings108@gmail.com",
+                        Password : "2D3BF23F5CD1C416134B42B9B24486D57E15?",
+                        To : 'salamisamuel2006@gmail.com',
+                        From : document.getElementById("email").value,
+                        Subject : "My Contatct Form Enquiry",
+                        Body : "And this is the body"
+                    }).then(
+                    message => alert(message)
+                    );
+        }
+        // let popup = document.getElementById("popup")
+
+        // function openPopup() {
+        //     popup.classList.add("open-popup")
+        // }
+        // function closePopup() {
+        //     popup.classList.remove("open-popup")
+        // }
+
+        // console.log(popup)
+    </script>
+</body>
+</html>
